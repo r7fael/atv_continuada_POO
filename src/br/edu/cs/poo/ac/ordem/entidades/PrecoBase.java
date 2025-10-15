@@ -6,7 +6,7 @@ public enum PrecoBase {
 	CONFIGURACAO_NORMAL (TipoOrdem.CONFIGURACAO, Dificuldade.NORMAL, 30.00),
 	CONFIGURACAO_DIFICIL (TipoOrdem.CONFIGURACAO, Dificuldade.DIFICIL, 45.00),
 	UPGRADE_NORMAL (TipoOrdem.UPGRADE, Dificuldade.NORMAL, 95.00),
-	UPGRADE_DIFICIL (TipoOrdem.UPGRADE, Dificuldade.DIFICIL, 110);
+	UPGRADE_DIFICIL (TipoOrdem.UPGRADE, Dificuldade.DIFICIL, 110.00);
 	
 	private final TipoOrdem tipoOrdem;
 	private final Dificuldade dificuldade;
