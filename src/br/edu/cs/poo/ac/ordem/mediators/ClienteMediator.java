@@ -36,8 +36,8 @@ public class ClienteMediator {
         Cliente clienteExistente = clienteDAO.buscar(cliente.getCpfCnpj());
         if (clienteExistente != null) {
             ListaString erros = new ListaString();
-            erros.adicionar("CPF/CNPJ já cadastrado");
-            return new ResultadoMediator(false, false, erros);
+            erros.adicionar("CPF/CNPJ já existente");
+            return new ResultadoMediator(true, false, erros);
         }
         
         boolean sucesso = clienteDAO.incluir(cliente);
@@ -55,7 +55,7 @@ public class ClienteMediator {
         if (clienteExistente == null) {
             ListaString erros = new ListaString();
             erros.adicionar("CPF/CNPJ inexistente");
-            return new ResultadoMediator(false, false, erros);
+            return new ResultadoMediator(true, false, erros);
         }
         
         boolean sucesso = clienteDAO.alterar(cliente);
@@ -73,7 +73,7 @@ public class ClienteMediator {
         if (clienteExistente == null) {
             ListaString erros = new ListaString();
             erros.adicionar("CPF/CNPJ inexistente");
-            return new ResultadoMediator(false, false, erros);
+            return new ResultadoMediator(true, false, erros);
         }
         
         boolean sucesso = clienteDAO.excluir(cpfCnpj);

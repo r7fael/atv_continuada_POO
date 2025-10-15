@@ -27,7 +27,7 @@ public class EquipamentoMediator {
     public ResultadoMediator incluirDesktop(Desktop desk) {
         ResultadoMediator resultadoValidacao = validarDesktop(desk);
         if (!resultadoValidacao.isValidado()) {
-            return new ResultadoMediator(false, false, resultadoValidacao.getMensagensErro());
+            return new ResultadoMediator(resultadoValidacao.isValidado(), false, resultadoValidacao.getMensagensErro());
         }
         
         boolean operacaoRealizada = desktopDAO.incluir(desk);
@@ -42,7 +42,7 @@ public class EquipamentoMediator {
     public ResultadoMediator alterarDesktop(Desktop desk) {
         ResultadoMediator resultadoValidacao = validarDesktop(desk);
         if (!resultadoValidacao.isValidado()) {
-            return new ResultadoMediator(false, false, resultadoValidacao.getMensagensErro());
+            return new ResultadoMediator(resultadoValidacao.isValidado(), false, resultadoValidacao.getMensagensErro());
         }
         
         boolean operacaoRealizada = desktopDAO.alterar(desk);
@@ -57,7 +57,7 @@ public class EquipamentoMediator {
     public ResultadoMediator incluirNotebook(Notebook note) {
         ResultadoMediator resultadoValidacao = validarNotebook(note);
         if (!resultadoValidacao.isValidado()) {
-            return new ResultadoMediator(false, false, resultadoValidacao.getMensagensErro());
+            return new ResultadoMediator(resultadoValidacao.isValidado(), false, resultadoValidacao.getMensagensErro());
         }
         
         boolean operacaoRealizada = notebookDAO.incluir(note);
@@ -72,7 +72,7 @@ public class EquipamentoMediator {
     public ResultadoMediator alterarNotebook(Notebook note) {
         ResultadoMediator resultadoValidacao = validarNotebook(note);
         if (!resultadoValidacao.isValidado()) {
-            return new ResultadoMediator(false, false, resultadoValidacao.getMensagensErro());
+            return new ResultadoMediator(resultadoValidacao.isValidado(), false, resultadoValidacao.getMensagensErro());
         }
         
         boolean operacaoRealizada = notebookDAO.alterar(note);

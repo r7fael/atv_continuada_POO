@@ -14,8 +14,9 @@ public class DesktopDAO extends DAOGenerico {
 	}
 	
 	public boolean incluir(Desktop desktop) {
-		if (buscar(desktop.getSerial()) == null) {
-			cadastroObjetos.incluir(desktop, desktop.getSerial());
+		String id = desktop.getIdTipo() + desktop.getSerial();
+		if (buscar(id) == null) {
+			cadastroObjetos.incluir(desktop, id);
 			return true;
 		} else {
 			return false;
@@ -23,8 +24,9 @@ public class DesktopDAO extends DAOGenerico {
 	}
 	
 	public boolean alterar(Desktop desktop) {
-		if (buscar(desktop.getSerial()) != null) {
-			cadastroObjetos.alterar(desktop, desktop.getSerial());
+		String id = desktop.getIdTipo() + desktop.getSerial();
+		if (buscar(id) != null) {
+			cadastroObjetos.alterar(desktop, id);
 			return true;
 		} else {
 			return false;

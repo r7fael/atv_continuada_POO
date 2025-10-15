@@ -42,8 +42,8 @@ public class OrdemServico implements Serializable {
             return String.format("%s%04d%02d%02d%02d%02d%s", 
                     tipoEquipamento, ano, mes, dia, hora, minuto, cpfCnpj);
         } else {
-            return String.format("%02d%04d%02d%02d%02d000%s", 
-                    mes, ano, dia, hora, minuto, cpfCnpj);
+            return String.format("%s%04d%02d%02d%02d%02d000%s", 
+                    tipoEquipamento, ano, mes, dia, hora, minuto, cpfCnpj);
         }
 	}
 }
